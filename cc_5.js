@@ -34,7 +34,13 @@ function processPayroll(employee) {
         netPay: netPay.toFixed(2)
 }};
 
-employees.forEach (employee => {
-    console.log(processPayroll(employee))
+employees.forEach(employee => {
+    const payroll = processPayroll(employee);
+    console.log(
+        `Name: ${payroll.name}
+        \nBase Pay: $${payroll.basePay}
+        \nOvertime Pay: $${payroll.overtimePay}
+        \nGross Pay: $${payroll.grossPay}
+        \nNet Pay: $${payroll.netPay}\n`
+    );
 });
-
