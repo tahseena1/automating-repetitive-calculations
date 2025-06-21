@@ -6,19 +6,17 @@ let employees = [
 ];
 
 function calculateBasePay (rate, hours) {
-    if (hours <= 40)
-        return (rate * hours);
-    else return (rate * 40);
+    const baseHours = Math.min(hours, 40);
+    return baseHours * rate;
 };
 
 function calculateOvertimePay (rate, hours) {
-    if (hours > 40)
-        return ((hours - 40) * (rate * 1.5));
-    else return 0;
+    const overtimeHours = Math.max(0, hours - 40);
+    return overtimeHours * rate * 1.5;
 };
 
 function calculateTaxes (grossPay) {
-    return (grossPay - (.15 * grossPay))
+    return (.85 * grossPay)
 };
 
 function processPayroll(employee) {
