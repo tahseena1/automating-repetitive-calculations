@@ -11,3 +11,13 @@ function calculateBasePay (rate, hours) {
     else return (rate * 40);
 }
 
+function calculateOvertimePay (rate, hours) {
+    if (employees.hoursWorked > 40)
+        return ((hours - 40) * (rate * 1.5));
+    else return 0;
+}
+
+function calculateTaxes (grossPay) {
+    return (grossPay - (.15 * grossPay));
+}
+
